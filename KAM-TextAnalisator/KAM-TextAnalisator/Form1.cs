@@ -1,6 +1,7 @@
 ﻿using System;
 using System.Collections.Generic;
 using System.IO;
+using System.Linq;
 using System.Windows.Forms;
 
 namespace KAM_TextAnalisator
@@ -10,9 +11,9 @@ namespace KAM_TextAnalisator
         public Form1()
         {
             InitializeComponent();
-            MessageBox.Show("" + ((int)'0').ToString());
-            MessageBox.Show(" " + ((int)'1').ToString());
-            MessageBox.Show(" " + ((int)'9').ToString());
+            //MessageBox.Show("" + ((int)'0').ToString());
+            //MessageBox.Show(" " + ((int)'1').ToString());
+            //MessageBox.Show(" " + ((int)'9').ToString());
 
 
 
@@ -32,7 +33,7 @@ namespace KAM_TextAnalisator
         string fileName = "";
 
 
-      
+
 
         List<string> wordsName = new List<string>();
         List<int> words = new List<int>();
@@ -93,6 +94,7 @@ namespace KAM_TextAnalisator
         {
             try
             {
+                #region Variables
                 // ready
                 int linesCount = 0;
                 // ready
@@ -119,9 +121,10 @@ namespace KAM_TextAnalisator
                 int wordsHyphenCount = 0;
                 // ready
                 int numberCount = 0;
+                #endregion
 
 
-
+                #region  Calculating STRING (Array of strings)
                 lettersCount = 0;
                 filePath = textBox1.Text;
                 linesCount = System.IO.File.ReadAllLines(filePath).Length;
@@ -138,7 +141,7 @@ namespace KAM_TextAnalisator
                         i++;
                     }
                 }
-
+                #endregion 
 
 
                 #region  Amount of letter and numeral (English)
@@ -270,7 +273,8 @@ namespace KAM_TextAnalisator
 
                     }
                 }
-                MessageBox.Show(wordsString.Count.ToString());
+                //MessageBox.Show(wordsString.Count.ToString());
+                //MessageBox.Show("wordsCount"+wordsCount.ToString());
                 textBox5.Text = "";
                 string maxWord = wordsString[0];
                 int maxWordLength = wordsString[0].Length;
@@ -319,48 +323,40 @@ namespace KAM_TextAnalisator
                     //}
                 }
 
-                MessageBox.Show(longestWord);
+                //MessageBox.Show(longestWord);
+                //List<string> wordsSTRING = wordsString;
+                string[] wordsMASS = new string[wordsString.Count];
 
-                #endregion
+                //MessageBox.Show("Count of new List>" + wordsSTRING.Count);
 
-
-                #region  Amount of Number 
-                for (int i = 0; i < STRING.Length; i++)
+                for (int i = 0; i < wordsString.Count; i++)
                 {
+                    wordsMASS[i] = wordsString[i];
 
-                    STRING[i] = STRING[i].Replace("  ", " ");
-                    STRING[i] = STRING[i].Replace("   ", " ");
-                    STRING[i] = STRING[i].Replace("    ", " ");
-                    STRING[i] = STRING[i].Replace("     ", " ");
-                    STRING[i] = STRING[i].Replace("      ", " ");
-                    STRING[i] = STRING[i].Replace("       ", " ");
-                    STRING[i] = STRING[i].Replace("        ", " ");
-                    STRING[i] = STRING[i].Replace("         ", " ");
-                    STRING[i] = STRING[i].Replace("          ", " ");
-                    STRING[i] = STRING[i].Replace("           ", " ");
-                    string[] MASS = STRING[i].Split(' ');
+                }
 
-                    for (int l = 0; l < MASS.Length; l++)
+                MessageBox.Show(wordsMASS.Length.ToString());
+
+                wordsMASS = wordsMASS.Distinct().ToArray();
+                int[] wordsFrequency = new int[wordsMASS.Length];
+
+                MessageBox.Show(wordsMASS.Length.ToString());
+                for (int i = 0; i < wordsMASS.Length; i++)
+                {
+                    for (int j = 0; j < wordsString.Count; j++)
                     {
-                        int count = 0;
-                        for (int m = 0; m < MASS[l].Length; m++)
+                        if (wordsMASS[i] == wordsString[j])
                         {
-                            //MessageBox.Show(MASS[l]);
-
-                            if ((MASS[l][m] >= 97 && MASS[l][m] <= 122) || (MASS[l][m] >= 65 && MASS[l][m] <= 90) || MASS[l][m] == 96 || MASS[l][m] == 39 || MASS[l][m] == 45)
-                            {
-                                count++;
-                            }
-
-                        }
-                        if (count == MASS[l].Length && count != 0)
-                        {
-                            wordsString.Add(MASS[l]);
-                            wordsCount++;
+                            wordsFrequency[i]++;
                         }
                     }
+
+                    textBox5.Text += $"\"{wordsMASS[i]}\":\"{wordsFrequency[i]}\", \r\n";
                 }
+
                 #endregion
+
+
 
 
 
@@ -378,25 +374,46 @@ namespace KAM_TextAnalisator
                       $"\"linesCount\":\"{linesCount}\", \r\n" +
                       $"\"wordsHyphenCount\":\"{wordsHyphenCount}\", \r\n" +
                       $"\"punctuationCount\":\"{punctuationCount}\", \r\n" +
-                      $"\"longestWord\":\"{longestWord}\", \r\n" +
+                      $"\"longestWord\":\"{longestWord}\", \r\n";
 
-                            "words {\r\n" +
-                                 $"\"a\":\"{23}\" \r\n" +
-                                 $"\"b\":\"{25}\" \r\n" +
-                            "}, \r\n";
-                textBox3.Text += "letters { \r\n";
+                textBox3.Text += "\"letters\":{ \r\n";
 
                 for (int i = 0; i < letters.Length; i++)
                 {
-                    textBox3.Text += $"\"{(char)lettersChar[i]}\":\"{letters[i]}\", \r\n";
-                }
-                textBox3.Text += "},\r\n";
+                    if (i == letters.Length - 1)
+                    {
+                        textBox3.Text += $"\"{(char)lettersChar[i]}\":\"{letters[i]}\" \r\n";
+                        textBox3.Text += "},\r\n";
+                    }
+                    else
+                    {
+                        if ((char)lettersChar[i] == 'A')
+                        {
+                            textBox3.Text += $"{(char)lettersChar[i]}\":\"{letters[i]}\", \r\n";
+                        }
+                        else
+                        {
+                            textBox3.Text += $"\"{(char)lettersChar[i]}\":\"{letters[i]}\", \r\n";
+                        }
+                    }
 
-                //for (int i = 0; i < words.Length; i++)
-                //{
-                //    textBox3.Text += $"\"a:\"{words[i]}";
-                //}
-                //textBox3.Text += "}";
+                }
+
+                textBox3.Text += "\"words\":{ \r\n";
+                for (int i = 0; i < wordsMASS.Length; i++)
+                {
+                    if (i == wordsMASS.Length - 1)
+                    {
+                        textBox3.Text += $"\"{wordsMASS[i]}\":\"{wordsFrequency[i]}\" \r\n";
+                        textBox3.Text += "} \r\n}";
+                    }
+                    else
+                    {
+                        textBox3.Text += $"\"{wordsMASS[i]}\":\"{wordsFrequency[i]}\", \r\n";
+                    }
+                }
+
+
             }
             catch (Exception ex)
             {
