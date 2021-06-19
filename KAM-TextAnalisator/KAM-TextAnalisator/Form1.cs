@@ -11,6 +11,8 @@ namespace KAM_TextAnalisator
         public Form1()
         {
             InitializeComponent();
+           
+
         }
 
         // ready

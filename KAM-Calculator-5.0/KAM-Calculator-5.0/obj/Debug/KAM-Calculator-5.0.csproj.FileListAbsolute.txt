@@ -1,0 +1,10 @@
+E:\0_GitHub\EPAM-Internship\KAM-Calculator-5.0\KAM-Calculator-5.0\bin\Debug\KAM-Calculator-5.0.exe.config
+E:\0_GitHub\EPAM-Internship\KAM-Calculator-5.0\KAM-Calculator-5.0\bin\Debug\KAM-Calculator-5.0.exe
+E:\0_GitHub\EPAM-Internship\KAM-Calculator-5.0\KAM-Calculator-5.0\bin\Debug\KAM-Calculator-5.0.pdb
+E:\0_GitHub\EPAM-Internship\KAM-Calculator-5.0\KAM-Calculator-5.0\obj\Debug\KAM-Calculator-5.0.csprojAssemblyReference.cache
+E:\0_GitHub\EPAM-Internship\KAM-Calculator-5.0\KAM-Calculator-5.0\obj\Debug\KAM_Calculator_5._0.Form1.resources
+E:\0_GitHub\EPAM-Internship\KAM-Calculator-5.0\KAM-Calculator-5.0\obj\Debug\KAM_Calculator_5._0.Properties.Resources.resources
+E:\0_GitHub\EPAM-Internship\KAM-Calculator-5.0\KAM-Calculator-5.0\obj\Debug\KAM-Calculator-5.0.csproj.GenerateResource.cache
+E:\0_GitHub\EPAM-Internship\KAM-Calculator-5.0\KAM-Calculator-5.0\obj\Debug\KAM-Calculator-5.0.csproj.CoreCompileInputs.cache
+E:\0_GitHub\EPAM-Internship\KAM-Calculator-5.0\KAM-Calculator-5.0\obj\Debug\KAM-Calculator-5.0.exe
+E:\0_GitHub\EPAM-Internship\KAM-Calculator-5.0\KAM-Calculator-5.0\obj\Debug\KAM-Calculator-5.0.pdb
