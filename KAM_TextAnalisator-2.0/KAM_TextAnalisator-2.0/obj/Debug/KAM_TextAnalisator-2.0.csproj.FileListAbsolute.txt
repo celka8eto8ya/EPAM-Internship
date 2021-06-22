@@ -1,0 +1,10 @@
+E:\0_GitHub\EPAM-Internship\KAM_TextAnalisator-2.0\KAM_TextAnalisator-2.0\bin\Debug\KAM_TextAnalisator-2.0.exe.config
+E:\0_GitHub\EPAM-Internship\KAM_TextAnalisator-2.0\KAM_TextAnalisator-2.0\bin\Debug\KAM_TextAnalisator-2.0.exe
+E:\0_GitHub\EPAM-Internship\KAM_TextAnalisator-2.0\KAM_TextAnalisator-2.0\bin\Debug\KAM_TextAnalisator-2.0.pdb
+E:\0_GitHub\EPAM-Internship\KAM_TextAnalisator-2.0\KAM_TextAnalisator-2.0\obj\Debug\KAM_TextAnalisator-2.0.csprojAssemblyReference.cache
+E:\0_GitHub\EPAM-Internship\KAM_TextAnalisator-2.0\KAM_TextAnalisator-2.0\obj\Debug\KAM_TextAnalisator-2.0.csproj.CoreCompileInputs.cache
+E:\0_GitHub\EPAM-Internship\KAM_TextAnalisator-2.0\KAM_TextAnalisator-2.0\obj\Debug\KAM_TextAnalisator-2.0.exe
+E:\0_GitHub\EPAM-Internship\KAM_TextAnalisator-2.0\KAM_TextAnalisator-2.0\obj\Debug\KAM_TextAnalisator-2.0.pdb
+E:\0_GitHub\EPAM-Internship\KAM_TextAnalisator-2.0\KAM_TextAnalisator-2.0\bin\Debug\Newtonsoft.Json.dll
+E:\0_GitHub\EPAM-Internship\KAM_TextAnalisator-2.0\KAM_TextAnalisator-2.0\bin\Debug\Newtonsoft.Json.xml
+E:\0_GitHub\EPAM-Internship\KAM_TextAnalisator-2.0\KAM_TextAnalisator-2.0\obj\Debug\KAM_TextAnalisator-2.0.csproj.CopyComplete
